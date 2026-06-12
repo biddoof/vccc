@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCCC // Log In</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header class="site-header">
+      <div class="site-title">[ VCCC // Vacuum Cleaner Collectors Club ]</div>
+    </header>
+
+    <p style="font-size:0.8rem; margin-bottom:24px;">&gt; Log In (Collectors Only)</p>
+
+    <div class="login-block">
+      <div class="error-msg" id="error-msg">Error: Wrong username or password.</div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-row">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" autocomplete="username" />
+        </div>
+        <div class="form-row">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" />
+        </div>
+        <div class="btn-row">
+          <button type="submit" class="terminal-btn">[ Submit ]</button>
+          <a href="index.html" class="terminal-btn">&lt; Go Back</a>
+        </div>
+      </form>
+    </div>
+
+    <footer class="site-footer">
+      VCCC v1.0 // Hosted on iammean.com // Keep your filters clean out there
+    </footer>
+
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value;
+      if (u && p) {
+        window.location.href = 'dashboard.html';
+      } else {
+        const err = document.getElementById('error-msg');
+        err.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
