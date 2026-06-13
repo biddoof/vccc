@@ -1,63 +1,112 @@
-/* ─── Reset ─── */
+/* ─── Y2K CYBER REDESIGN ─── */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ─── Global ─── */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  color: #333;
-  background: #fff;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 14px;
+  color: #b8d8f0;
+  background-color: #00001a;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 40%, rgba(0, 60, 180, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(0, 200, 255, 0.12) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0, 80, 160, 0.06) 39px, rgba(0, 80, 160, 0.06) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0, 80, 160, 0.06) 39px, rgba(0, 80, 160, 0.06) 40px);
   min-height: 100vh;
 }
 
-a { color: #3376ea; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: #00ccff; text-decoration: none; }
+a:hover { color: #ffffff; text-shadow: 0 0 8px #00ccff; text-decoration: none; }
+
+/* ─── Stars ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 8%,  rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 37% 12%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52% 68%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 29%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 82%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 5%,  rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  91%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 54%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 42%, rgba(255,255,255,0.5) 0%, transparent 100%);
+}
+
+/* ─── Site wrapper sits above stars ─── */
+.site-header, nav, .page-wrap, .site-footer { position: relative; z-index: 1; }
 
 /* ─── Site Header ─── */
 .site-header {
-  background: #375199;
-  color: #fff;
-  padding: 18px 24px;
+  background: linear-gradient(180deg, #0a0a2e 0%, #050518 60%, #0a0a2e 100%);
+  border-bottom: 2px solid #0088cc;
+  box-shadow: 0 0 24px rgba(0, 180, 255, 0.35), inset 0 -1px 0 rgba(0, 220, 255, 0.2);
+  padding: 20px 28px;
+  text-align: center;
 }
 
 .site-header h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.02em;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00eeff;
+  text-shadow: 0 0 8px #00eeff, 0 0 22px rgba(0, 238, 255, 0.5), 0 0 40px rgba(0, 150, 255, 0.3);
 }
 
 .site-header .tagline {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  opacity: 0.85;
-  margin-top: 3px;
+  color: #4488bb;
+  margin-top: 5px;
 }
 
 /* ─── Navigation ─── */
 nav {
-  background: #2a3d7c;
+  background: linear-gradient(90deg, #03031a, #060630, #03031a);
+  border-bottom: 1px solid #004466;
+  box-shadow: 0 3px 12px rgba(0, 100, 200, 0.25);
 }
 
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
+  justify-content: center;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 nav ul li a {
   display: block;
-  color: #fff;
-  padding: 10px 16px;
-  font-size: 0.88rem;
-  text-decoration: none;
+  color: #6ab8d8;
+  padding: 10px 18px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  border-right: 1px solid rgba(0, 80, 120, 0.4);
+  transition: color 0.15s, background 0.15s, text-shadow 0.15s;
 }
+
+nav ul li:first-child a { border-left: 1px solid rgba(0, 80, 120, 0.4); }
 
 nav ul li a:hover,
 nav ul li a.active {
-  background: #3376ea;
+  background: rgba(0, 140, 255, 0.15);
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px rgba(0, 255, 255, 0.4);
   text-decoration: none;
 }
 
@@ -65,147 +114,235 @@ nav ul li a.active {
 .page-wrap {
   max-width: 900px;
   margin: 0 auto;
-  padding: 32px 24px 60px;
+  padding: 36px 24px 70px;
 }
 
 /* ─── Content sections ─── */
 .content-block {
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 }
 
 .content-block h2 {
-  font-size: 1.2rem;
-  color: #375199;
-  border-bottom: 2px solid #375199;
-  padding-bottom: 6px;
-  margin-bottom: 14px;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 0.95rem;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00ccff;
+  text-shadow: 0 0 8px rgba(0, 204, 255, 0.6);
+  border-bottom: 1px solid #004466;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
+.content-block h2::before { content: '// '; opacity: 0.5; }
+
 .content-block p {
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 12px;
+  color: #b0cce0;
 }
 
 .content-block ul {
-  padding-left: 20px;
-  line-height: 1.8;
-  margin-bottom: 12px;
+  padding-left: 0;
+  list-style: none;
+  line-height: 1.9;
+  margin-bottom: 14px;
+  color: #b0cce0;
+}
+
+.content-block ul li::before {
+  content: '> ';
+  color: #00ccff;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 /* ─── Featured notice ─── */
 .notice-box {
-  border-left: 4px solid #3376ea;
-  background: #f0f5ff;
+  border: 1px solid #0077aa;
+  border-left: 3px solid #00ccff;
+  background: rgba(0, 60, 120, 0.25);
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.15), inset 0 0 20px rgba(0, 80, 160, 0.1);
   padding: 14px 18px;
-  margin-bottom: 28px;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #a8d8f0;
 }
 
-.notice-box strong { color: #375199; }
+.notice-box strong { color: #00eeff; }
 
 /* ─── Info table ─── */
 .info-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .info-table th, .info-table td {
   text-align: left;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
+  padding: 9px 14px;
+  border: 1px solid #003355;
 }
 
 .info-table th {
-  background: #375199;
-  color: #fff;
+  background: linear-gradient(90deg, #001840, #002a5e, #001840);
+  color: #00ccff;
+  font-family: 'Share Tech Mono', monospace;
   font-weight: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
 }
 
-.info-table tr:nth-child(even) td { background: #f7f9ff; }
+.info-table tr:nth-child(even) td { background: rgba(0, 40, 90, 0.3); }
+.info-table tr:nth-child(odd) td  { background: rgba(0, 20, 50, 0.2); }
 
-/* ─── Membership form area ─── */
+/* ─── Membership CTA ─── */
 .membership-cta {
-  background: #f0f5ff;
-  border: 1px solid #c5d3f5;
+  border: 1px solid #005588;
+  background: rgba(0, 30, 80, 0.4);
+  box-shadow: 0 0 14px rgba(0, 100, 200, 0.15);
   padding: 20px 24px;
   margin-bottom: 28px;
 }
 
 .membership-cta h3 {
-  color: #375199;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #00ccff;
   margin-bottom: 10px;
-  font-size: 1rem;
 }
 
+.membership-cta p { color: #b0cce0; line-height: 1.7; margin-bottom: 8px; }
+
+/* ─── Button ─── */
 .btn {
   display: inline-block;
-  background: #375199;
-  color: #fff;
-  padding: 9px 20px;
-  font-size: 0.88rem;
-  border: none;
+  background: linear-gradient(180deg, #003a8a 0%, #001a4e 50%, #002870 100%);
+  border: 1px solid #0077cc;
+  box-shadow: 0 0 10px rgba(0, 140, 255, 0.35), inset 0 1px 0 rgba(0, 200, 255, 0.2);
+  color: #00ddff;
+  padding: 9px 22px;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
   margin-top: 10px;
 }
 
-.btn:hover { background: #3376ea; text-decoration: none; color: #fff; }
+.btn:hover {
+  background: linear-gradient(180deg, #004db0 0%, #002566 50%, #003890 100%);
+  border-color: #00ccff;
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.55), inset 0 1px 0 rgba(0, 255, 255, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 6px #00ffff;
+  text-decoration: none;
+}
 
-/* ─── Convention card ─── */
+/* ─── Event card ─── */
 .event-card {
-  border: 1px solid #dde3f5;
-  padding: 18px 20px;
+  border: 1px solid #003355;
+  background: rgba(0, 20, 55, 0.35);
+  padding: 16px 20px;
   margin-bottom: 16px;
+  box-shadow: inset 0 0 20px rgba(0, 60, 120, 0.15);
 }
 
 .event-card h3 {
-  font-size: 1rem;
-  color: #375199;
-  margin-bottom: 6px;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: normal;
+  font-size: 0.92rem;
+  color: #00ccff;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
 }
 
 .event-card .meta {
-  font-size: 0.82rem;
-  color: #666;
+  font-size: 0.78rem;
+  color: #5588aa;
   margin-bottom: 8px;
+  font-family: 'Share Tech Mono', monospace;
 }
 
-.event-card p { font-size: 0.9rem; line-height: 1.6; }
+.event-card p { font-size: 0.88rem; line-height: 1.65; color: #b0cce0; }
 
-/* ─── Contact ─── */
+/* ─── Contact grid ─── */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 18px;
   margin-bottom: 28px;
 }
 
 @media (max-width: 580px) { .contact-grid { grid-template-columns: 1fr; } }
 
+.contact-section {
+  border: 1px solid #003355;
+  background: rgba(0, 20, 55, 0.3);
+  padding: 16px;
+}
+
 .contact-section h3 {
-  font-size: 0.95rem;
-  color: #375199;
-  border-bottom: 1px solid #dde3f5;
-  padding-bottom: 5px;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00bbee;
+  border-bottom: 1px solid #003355;
+  padding-bottom: 6px;
   margin-bottom: 10px;
 }
 
-.contact-section p, .contact-section address {
-  font-size: 0.9rem;
+.contact-section p,
+.contact-section address {
+  font-size: 0.88rem;
   line-height: 1.7;
   font-style: normal;
+  color: #a8c8e0;
+}
+
+/* ─── Section heading (dashboard-style) ─── */
+.section-heading {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00aacc;
+  border-bottom: 1px solid #003355;
+  padding-bottom: 4px;
+  margin-bottom: 14px;
 }
 
 /* ─── Footer ─── */
 .site-footer {
-  background: #375199;
-  color: rgba(255,255,255,0.8);
+  background: linear-gradient(90deg, #03031a, #060630, #03031a);
+  border-top: 1px solid #003355;
+  box-shadow: 0 -3px 14px rgba(0, 80, 180, 0.2);
+  color: #336688;
   text-align: center;
   padding: 14px 20px;
-  font-size: 0.8rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
   margin-top: 40px;
+  position: relative;
+  z-index: 1;
 }
 
-.site-footer a { color: rgba(255,255,255,0.9); }
+.site-footer a { color: #4488aa; }
+.site-footer a:hover { color: #00ccff; text-shadow: 0 0 6px #00ccff; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; background: #00001a; }
+::-webkit-scrollbar-thumb { background: #002244; border: 1px solid #004488; }
+::-webkit-scrollbar-thumb:hover { background: #003366; }
+
+/* ─── Selection ─── */
+::selection { background: #003888; color: #00ffff; }
